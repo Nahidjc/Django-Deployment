@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+{% if user.is_authenticated %}
+<h4>Hey, {{ user_basic_info.username }}</h4>
+
+<h4>Your Email: {{ user_basic_info.email }}</h4>
+<br>
+<a href="{{ user_more_info.facebook_id }}" >Facebook Profile</a>
+<br>
+<img src="media/{{ user_more_info.profile_pic }}"  class="rounded-circle" width="100px" data-holder-rendered="true">
+
+{% else %}
+<div class="alert alert-primary">You are not logged in!!
+
+</div>
+{% endif %}
+{% endblock %}
